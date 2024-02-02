@@ -49,7 +49,6 @@ class _MyAppState extends State<MyApp> {
               icon: Icon(Icons.search),
             ),
 
-            
             BottomNavigationBarItem(
               icon: Icon(Icons.message),
               label: 'Messages',
