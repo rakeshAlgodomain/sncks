@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "210964815684",
+    "project_id": "sncks-68219",
+    "storage_bucket": "sncks-68219.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:210964815684:android:62b57c810356d4fc028111",
+        "android_client_info": {
+          "package_name": "com.example.sncks"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDAb1FZgSGz9e51Gzmq2m9KGhlfOtqia2E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

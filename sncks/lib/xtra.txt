@@ -1,0 +1,54 @@
+return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        
+        appBar: AppBar(
+          title: const Text('Here we go'),
+          backgroundColor: Colors.blue,
+        ),
+        body: Center(child: ElevatedButton(
+          onPressed: (){
+            setState(() {
+              buttonName = 'DONE';
+            });
+            
+            print('HERE we aee ');
+
+          },
+          child: Text(buttonName),
+          ),
+        ),
+
+        bottomNavigationBar: BottomNavigationBar(
+          items: const [
+            BottomNavigationBarItem(
+              label: 'HOME',
+              icon: Icon(Icons.home),
+            ),
+
+            BottomNavigationBarItem(
+              label: 'SEARCH',
+              icon: Icon(Icons.search),
+            ),
+
+            BottomNavigationBarItem(
+              icon: Icon(Icons.message),
+              label: 'Messages',
+            ),
+           
+            
+            
+          ],
+          currentIndex: 2,
+        ),
+      ),
+    );
+  
+
+
+
+  ---------------------------------------------------------------------------------------------------
+
+
+class _MyAppState extends State<MyApp> {
+

@@ -1,65 +1,29 @@
 import 'package:flutter/material.dart';
+import 'package:sncks/firebase_options.dart';
+import 'package:sncks/login.dart';
+import 'package:firebase_core/firebase_core.dart';
 
-void main() {
-  runApp( MyApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  FirebaseApp app = await Firebase.initializeApp(
+      options: DefaultFirebaseOptions.currentPlatform,
+    );
+  runApp( const MyApp());
 }
 
-class MyApp extends StatefulWidget {
-   MyApp({Key? key}) : super(key: key);
-
-  @override
-  State<MyApp> createState() => _MyAppState();
-}
-
-class _MyAppState extends State<MyApp> {
-   String buttonName = "HAPPPPPPPY";
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        
-        appBar: AppBar(
-          title: const Text('Here we go'),
-          backgroundColor: Colors.blue,
-        ),
-        body: Center(child: ElevatedButton(
-          onPressed: (){
-            setState(() {
-              buttonName = 'DONE';
-            });
-            
-            print('HERE we aee ');
+      title: "",
 
-          },
-          child: Text(buttonName),
-          ),
-        ),
-
-        bottomNavigationBar: BottomNavigationBar(
-          items: const [
-            BottomNavigationBarItem(
-              label: 'HOME',
-              icon: Icon(Icons.home),
-            ),
-
-            BottomNavigationBarItem(
-              label: 'SEARCH',
-              icon: Icon(Icons.search),
-            ),
-
-            BottomNavigationBarItem(
-              icon: Icon(Icons.message),
-              label: 'Messages',
-            ),
-           
-            
-            
-          ],
-          currentIndex: 2,
-        ),
+      theme: ThemeData(
+        primarySwatch: Colors.blue
       ),
+
+      home: const LoginPage(),
     );
   }
 }
