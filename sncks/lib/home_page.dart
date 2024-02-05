@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
 
 class HomePage extends StatefulWidget {
@@ -17,7 +18,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("HOME APPP"),
+        title: const Text("HOME APPP"),
 
 
       ),
@@ -30,13 +31,16 @@ class _HomePageState extends State<HomePage> {
           const Text(
             "HOME SCREEN "
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             ElevatedButton(onPressed: () async{
-              FirebaseAuth.instance.signOut();  
+              await FirebaseAuth.instance.signOut();
+              await GoogleSignIn().signOut(); 
+
+
               Navigator.of(context).pop(
               );
-
-            }, child: Text("LogOut"))
+ 
+            }, child: const Text("LogOut"))
           ],
         ),
       ),
